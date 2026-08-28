@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:dev" : "cross-env TEST_ENV=dev npx playwright test"
+    "test:dev" : "cross-env TEST_ENV=dev npx playwright test",
+    "web": "npx playwright test --grep @Web"
   },
   "keywords": [],
   "author": "",
