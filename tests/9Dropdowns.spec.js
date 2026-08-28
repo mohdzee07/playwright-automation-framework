@@ -13,7 +13,7 @@ test("Dropdowns", async({page})=>
 
     await page.selectOption("#dynamic-select","Selenium")
 
-    await page.pause();
+    //await page.pause();
 })
 
 test("amazon dropdown", async({page})=>
@@ -24,5 +24,5 @@ test("amazon dropdown", async({page})=>
     await page.locator("#twotabsearchtextbox").fill("Adidas Sneakers")
    await page.locator('#sac-suggestion-row-1').waitFor({ state: 'visible' });
     await page.locator('#sac-suggestion-row-4').click();
-    await page.pause()
+    //await page.pause()
 })
