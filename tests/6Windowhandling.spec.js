@@ -1,6 +1,6 @@
 import {test,expect}  from "@playwright/test"
 
-test("Window handling", async({browser})=>
+test("New Window handling", async({browser})=>
 {
 
     const context =  await browser.newContext();
