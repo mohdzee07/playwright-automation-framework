@@ -1,6 +1,6 @@
 import {test,expect}  from "@playwright/test"
 
-test("NEW Window handling", async({browser})=>
+test("123NEW Window handling", async({browser})=>
 {
 
     const context =  await browser.newContext();
@@ -29,5 +29,5 @@ test("NEW Window handling", async({browser})=>
 
    await newpage.bringToFront();
 
-    await page.pause();
+    //await page.pause();
 })
