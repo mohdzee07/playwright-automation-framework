@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 
-test.only("Multipl Env", async({page})=>
+test("Multipl Env", async({page})=>
 {
     console.log(process.env.URL)
     console.log(process.env.USERNAME1)
