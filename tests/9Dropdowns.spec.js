@@ -21,7 +21,7 @@ test("amazon dropdown", async({page})=>
 
 
     await page.goto("https://www.amazon.in/?&tag=googhydrabk1-21&ref=pd_sl_7hz2t19t5c_e&adgrpid=155259815513&hvpone=&hvptwo=&hvadid=815461303151&hvpos=&hvnetw=g&hvrand=4222606898054801347&hvqmt=e&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9062036&hvtargid=kwd-10573980&hydadcr=14453_2462831&mcid=4c22dcdee2bf3a71b0b832c5c4ba9c17&hvocijid=4222606898054801347--&hvexpln=nav&gad_source=1")
-    await page.locator("#twotabsearchtextbox").fill("Adidas Sneakers")
+    await page.getByPlaceholder("Search Amazon.in").fill("Adidas Sneakers")
    await page.locator('#sac-suggestion-row-1').waitFor({ state: 'visible' });
     await page.locator('#sac-suggestion-row-4').click();
     //await page.pause()
