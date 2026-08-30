@@ -8,7 +8,7 @@ test("Alert Popups", async({page})=>
 //scroll
     await page.getByTestId("scroll-spacer").scrollIntoViewIfNeeded()
      //await page.mouse.wheel(0, 3000);
-     await page.pause();
+     //await page.pause();
    await page.getByTestId("Draggable item").dragTo(page.getByText("Drop here"));
   
 

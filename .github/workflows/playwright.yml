@@ -18,7 +18,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test tests/12Keyboardactions.spec
+      run: npx playwright test tests/14Pagination.spec.js
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
