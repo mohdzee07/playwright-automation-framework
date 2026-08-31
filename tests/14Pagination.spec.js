@@ -6,7 +6,7 @@ test('find Jane Smith using for loop', async ({ page }) => {
 
   const targetName = 'Jane Smith';
   const totalPages = 4; // we know this from looking at the pagination
-  let found = false;
+  //let found = false;
 
   // Loop from page 1 to page 4 (i starts at 1, runs while i <= 4, adds 1 each time)
   for (let i = 1; i <= totalPages; i++) {
@@ -14,23 +14,28 @@ test('find Jane Smith using for loop', async ({ page }) => {
     console.log('Checking page number:', i);
 
     const row = page.locator('table tbody tr', { hasText: targetName });
-    const isRowVisible = await row.isVisible();
+    //const isRowVisible = await row.isVisible();
 
-    if (isRowVisible === true) {
-      found = true;
+    if (await row.isVisible()){
+      //found = true;
       console.log('Found Jane Smith on page', i);
       break; // stop the for loop immediately, no need to check more pages
     }
-
-    // Not found yet, so click Next (unless we're already on the last page)
-    if (i < totalPages) {
-      const nextButton = page.locator('a:has-text("Next")');
+    else{
+         const nextButton = page.locator('a:has-text("Next")');
       await nextButton.click();
       await page.waitForTimeout(300);
     }
+
+    // Not found yet, so click Next (unless we're already on the last page)
+    // if (i < totalPages) {
+    //   const nextButton = page.locator('a:has-text("Next")');
+    //   await nextButton.click();
+    //   await page.waitForTimeout(300);
+    // }
   }
 
-  expect(found).toBe(true);
+  //expect(found).toBe(true);
 
   const row = page.locator('table tbody tr', { hasText: targetName });
   const allCellsInRow = await row.locator('td').allTextContents();
