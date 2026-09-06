@@ -7,11 +7,14 @@ import { defineConfig, devices } from '@playwright/test';
  */
 import dotenv from 'dotenv';
 // import path from 'path';
-dotenv.config(
-  { 
-    //path:`./env/.env.${process.env.TEST_ENV}` 
-    path:process.env.TEST_ENV ? `./env/.env.${process.env.TEST_ENV}` : `./env/.env.dev`
-  });
+
+dotenv.config({
+  path: process.env.TEST_ENV
+    ? `./.env/.env.${process.env.TEST_ENV}`
+    : './.env/.env.dev'
+});
+
+
 
 /**
  * @see https://playwright.dev/docs/test-configuration
@@ -41,6 +44,7 @@ export default defineConfig({
     navigationTimeout:60*6000,
     actionTimeout:10*1000,
     video: 'retain-on-failure', // bonus: video recording, same pattern as trace
+    ignoreHTTPSErrors:true
   },
 
 

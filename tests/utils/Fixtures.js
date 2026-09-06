@@ -21,6 +21,7 @@ CartPage :async({autheticatedPage},use)=>
 {
   await autheticatedPage.locator("[routerlink*='cart']").click();
   await use(autheticatedPage)
+  await autheticatedPage.close();
 },
 
 //Data driven fixture-- we can just creata an object and use it
