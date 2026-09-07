@@ -28,37 +28,32 @@ async  gettoken()
         
     }
 
-  async  createOrder(orderpayload)
-    {
+ async createOrder(orderpayload) {
 
-        let response= {};
-           response.token = await this.gettoken();
-         const orderresponse = await this.apiContext.post(
-                "https://rahulshettyacademy.com/api/ecom/order/create-order",
-                {
-                    data: orderpayload,
-                    headers: {
-                        'Authorization': this.gettoken(),
-                        'Content-Type': "application/json"
-                    }
-                });
-        
-       
-            console.log(orderresponse.status())
-        
-            const orderresponsejson = await orderresponse.json();
-        
-            console.log(orderresponsejson);
-        
-            let orderid = orderresponsejson.orders[0];
-        
-            console.log("Order ID:", orderid);
-            
-             response.orderid = orderid
-            return response;
-            
-    }
+    let response = {};
+    response.token = await this.gettoken();
 
+    const orderresponse = await this.apiContext.post(
+        "https://rahulshettyacademy.com/api/ecom/order/create-order",
+        {
+            data: orderpayload,
+            headers: {
+                'Authorization': response.token,   // ✅ use the already-resolved token
+                'Content-Type': "application/json"
+            }
+        });
+
+    console.log(orderresponse.status());
+
+    const orderresponsejson = await orderresponse.json();
+    console.log(orderresponsejson);
+
+    let orderid = orderresponsejson.orders[0];
+    console.log("Order ID:", orderid);
+
+    response.orderid = orderid;
+    return response;
+}
 }
 
 module.exports = {Apiutilss}

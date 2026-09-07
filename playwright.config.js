@@ -39,7 +39,7 @@ export default defineConfig({
       //testIdAttribute:'data-test',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     screenshot: 'only-on-failure', // options: 'off' | 'on' | 'only-on-failure'
-    trace: 'on-first-retry', // options: 'off' | 'on' | 'retain-on-failure' | 'on-first-retry'
+    trace: 'on', // options: 'off' | 'on' | 'retain-on-failure' | 'on-first-retry'
     headless : true,
     navigationTimeout:60*6000,
     actionTimeout:10*1000,

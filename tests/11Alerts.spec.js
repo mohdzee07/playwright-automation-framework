@@ -6,7 +6,7 @@ test("Alert Popups", async({page})=>
 
     await page.goto("https://www.sreenidhirajakrishnan.com/practice#section-6");
     
-    page.on('dialog', async dialog=>
+    page.on('dialog', async dialog =>
     {
        
         console.log(dialog.type())

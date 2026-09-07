@@ -43,6 +43,7 @@ test("Download a file", async({page})=>
        // // await download.saveAs(path.join(__dirname,'Downloads', 'input1.csv'));
 
        //  await download.saveAs('./Downloads/input2.csv');
+       
 //all() -- returns an array of locators
        const dfiles = await page.locator('.example a').all();
        console.log(dfiles);
