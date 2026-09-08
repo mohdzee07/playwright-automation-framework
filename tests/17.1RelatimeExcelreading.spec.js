@@ -4,7 +4,7 @@ async function getLoginData() {
 
     const workbook =new ExcelJS.Workbook();
 
-    await workbook.xlsx.readFile("C:/Users/AF17PZZ/Downloads/LoginData.xlsx");
+    await workbook.xlsx.readFile("C:/Users/AF17PZZ/Downloads/exceldata.xlsx");
 
     const worksheet =workbook.getWorksheet('Sheet1');
 
@@ -15,11 +15,11 @@ async function getLoginData() {
         if (rowNumber > 1) {
 
             users.push({
-                url:row.getCell(1).value,
+                FirstName:row.getCell(1).value,
 
-                username: row.getCell(2).value,
+                LastName: row.getCell(2).value,
 
-                password:row.getCell(3).value
+                email:row.getCell(3).value
 
             });
 
