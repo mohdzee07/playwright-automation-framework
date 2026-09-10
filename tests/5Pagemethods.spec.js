@@ -6,7 +6,7 @@ test("Page Methods", async({page})=>
    //await page.reload()
    //await page.pause();
    await page.getByPlaceholder("Enter Username").fill("mor_2314");
-   await page.getByPlaceholder("Enter Password").fill("83r5^_");
+   await page.getByPlaceholder("Hello Enter Password").fill("83r5^_");
    await page.getByRole('button',{name : 'Login'}).click()
    await page.goBack();
    

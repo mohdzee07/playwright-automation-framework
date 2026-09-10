@@ -8,7 +8,7 @@ test("Alert Popups", async({page})=>
     
     page.on('dialog', async dialog =>
     {
-       
+        console.log("Test")
         console.log(dialog.type())
         console.log(dialog.message())
         await dialog.accept("Helllo Zee!!")
