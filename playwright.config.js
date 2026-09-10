@@ -8,11 +8,7 @@ import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
 // import path from 'path';
 
-dotenv.config({
-  path: process.env.TEST_ENV
-    ? `./.env/.env.${process.env.TEST_ENV}`
-    : './.env/.env.dev'
-});
+dotenv.config({path: process.env.TEST_ENV ? `./.env/.env.${process.env.TEST_ENV}` : './.env/.env.dev'});
 
 
 
